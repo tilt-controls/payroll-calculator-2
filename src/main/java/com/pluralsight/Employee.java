@@ -3,27 +3,31 @@ import java.util.*;
 import java.io.*;
 
 public class Employee {
-    private int employeeID;
+    private String employeeID;
     private String name;
     private double hoursWorked;
     private double payRate;
 
-    public Employee(int employeeID, String name, double hoursWorked, double payRate) {
+    public Employee(String employeeID, String name, double hoursWorked, double payRate) {
         this.employeeID = employeeID;
         this.name = name;
         this.hoursWorked = hoursWorked;
         this.payRate = payRate;
     }
 
-    public static void getGrossPay(int employeeID, Double hoursWorked, double payRate){
-        double grossPay = hoursWorked * payRate;
+    public Employee() {
+
     }
 
-    public int getEmployeeID() {
+    public double getGrossPay(){
+        return double grossPay = hoursWorked * payRate;
+    }
+
+    public String getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(int employeeID) {
+    public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
 
