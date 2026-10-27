@@ -17,6 +17,7 @@ public class Calculator {
 
             BufferedReader bufferedReader = new BufferedReader(new FileReader(existingFile));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(writingFile));
+            bufferedWriter.write("ID|NAME|GROSS PAY\n");
             String line = bufferedReader.readLine();
 
 
