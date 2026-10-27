@@ -19,7 +19,7 @@ public class Calculator {
                 Double hoursWorked = Double.parseDouble(tokens[2]);
                 Double payRate = Double.parseDouble(tokens[3]);
                 Employee employee1 = new Employee(employeeID, name, hoursWorked, payRate);
-                System.out.printf("%s|%s|%.2f\n", employee1.getEmployeeID(), employee1.getName(),
+                System.out.printf("%s|%s|$%.2f\n", employee1.getEmployeeID(), employee1.getName(),
                         employee1.getGrossPay());
             }
 
