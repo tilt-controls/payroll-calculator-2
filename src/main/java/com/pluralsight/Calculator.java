@@ -7,7 +7,16 @@ import java.util.regex.Pattern;
 public class Calculator {
     public static void main(String[] args) {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("employees.csv"));
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the name of file to process: ");
+            String existingFile = scanner.nextLine();
+
+            System.out.println("Enter name of the payroll file to create: ");
+            String writingFile = scanner.nextLine();
+
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(existingFile));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(writingFile));
             String line = bufferedReader.readLine();
 
             System.out.println("ID - Name - Gross Pay");
@@ -19,8 +28,7 @@ public class Calculator {
                 Double hoursWorked = Double.parseDouble(tokens[2]);
                 Double payRate = Double.parseDouble(tokens[3]);
                 Employee employee1 = new Employee(employeeID, name, hoursWorked, payRate);
-                System.out.printf("%s|%s|$%.2f\n", employee1.getEmployeeID(), employee1.getName(),
-                        employee1.getGrossPay());
+
             }
 
         } catch (IOException e) {
