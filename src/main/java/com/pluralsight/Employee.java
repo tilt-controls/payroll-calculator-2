@@ -15,12 +15,9 @@ public class Employee {
         this.payRate = payRate;
     }
 
-    public Employee() {
-
-    }
 
     public double getGrossPay(){
-        return double grossPay = hoursWorked * payRate;
+        return hoursWorked * payRate;
     }
 
     public String getEmployeeID() {
