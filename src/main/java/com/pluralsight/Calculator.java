@@ -9,7 +9,8 @@ public class Calculator {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("employees.csv"));
             String line = bufferedReader.readLine();
-            System.out.println(line);
+
+            System.out.println("ID - Name - Gross Pay");
 
             while ((line = bufferedReader.readLine()) != null) {
                 String[] tokens = line.split("\\|");
@@ -17,8 +18,9 @@ public class Calculator {
                 String name = tokens[1];
                 Double hoursWorked = Double.parseDouble(tokens[2]);
                 Double payRate = Double.parseDouble(tokens[3]);
-                Employee employeeData = new Employee(employeeID, name, hoursWorked, payRate);
-                System.out.printf("%s|%s|%.2f|%.2f\n", employeeID, name, hoursWorked, payRate);
+                Employee employee1 = new Employee(employeeID, name, hoursWorked, payRate);
+                System.out.printf("%s|%s|%.2f\n", employee1.getEmployeeID(), employee1.getName(),
+                        employee1.getGrossPay());
             }
 
         } catch (IOException e) {
