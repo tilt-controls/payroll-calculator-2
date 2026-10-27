@@ -51,4 +51,10 @@ public class Employee {
     public void setPayRate(double payRate) {
         this.payRate = payRate;
     }
+
+
+    public String toCSV() {
+        return employeeID + "|" + name + "|" + (hoursWorked * payRate) +"\n";
+    }
 }
+

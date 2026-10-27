@@ -16,10 +16,9 @@ public class Calculator {
 
 
             BufferedReader bufferedReader = new BufferedReader(new FileReader(existingFile));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(writingFile));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(writingFile));
             String line = bufferedReader.readLine();
 
-            System.out.println("ID - Name - Gross Pay");
 
             while ((line = bufferedReader.readLine()) != null) {
                 String[] tokens = line.split("\\|");
@@ -28,8 +27,14 @@ public class Calculator {
                 Double hoursWorked = Double.parseDouble(tokens[2]);
                 Double payRate = Double.parseDouble(tokens[3]);
                 Employee employee1 = new Employee(employeeID, name, hoursWorked, payRate);
+                String text = employee1.toCSV();
+
+                bufferedWriter.write(text);
 
             }
+            System.out.println("\nFile complete!");
+            bufferedWriter.close();
+            scanner.close();
 
         } catch (IOException e) {
             e.printStackTrace();
